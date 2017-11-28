@@ -1,17 +1,17 @@
 package com.java.study.asm.adapter;
 
-import org.objectweb.asm.ClassAdapter;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
 
 /**
  * Created by zhongjing on 2017/11/17.
  */
-public class AddSecurityCheckClassAdapter extends ClassAdapter {
+public class AddSecurityCheckClassAdapter extends ClassVisitor {
     public AddSecurityCheckClassAdapter(ClassVisitor cv) {
         //Responsechain 的下一个 ClassVisitor，这里我们将传入 ClassWriter，
         // 负责改写后代码的输出
-        super(cv);
+        super(Opcodes.ASM4,cv);
     }
 
     // 重写 visitMethod，访问到 "operation" 方法时，

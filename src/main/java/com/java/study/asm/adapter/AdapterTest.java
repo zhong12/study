@@ -4,11 +4,9 @@ import org.objectweb.asm.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import static org.objectweb.asm.Opcodes.*;
+import static org.objectweb.asm.Opcodes.ACC_PUBLIC;
 
 /**
  * Created by zhongjing on 2017/11/17.
@@ -25,9 +23,9 @@ public class AdapterTest {
 //    cglib，另一个更高层一些的自动代码生成工具使用了ASM。
     
     public static void main(String[] args) throws Exception {
-//        addByte();
+        addByte();
 //        createInterface();
-        createClass();
+//        createClass();
         
     }
 
@@ -46,8 +44,8 @@ public class AdapterTest {
     public static void addByte() throws Exception{
         ClassReader cr = new ClassReader("com.java.study.asm.proxy.AccountImpl");
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS);
-        ClassAdapter classAdapter = new AddSecurityCheckClassAdapter(cw);
-        cr.accept(classAdapter, ClassReader.SKIP_DEBUG);
+        ClassVisitor classVisitor = new AddSecurityCheckClassAdapter(cw);
+        cr.accept(classVisitor, ClassReader.SKIP_DEBUG);
         byte[] data = cw.toByteArray();
         File file = new File("D:\\AccountImpl123.class");
         FileOutputStream fileOutputStream = new FileOutputStream(file);
