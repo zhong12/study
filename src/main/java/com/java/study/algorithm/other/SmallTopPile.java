@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
  */
 public class SmallTopPile {
 
-    public static int N = 10;           //Top10
-    public static int LEN = 100000000; //1亿个整数
-    public static int arr[] = new int[LEN];
-    public static int result[] = new int[N]; //在内存维护一个长度为N的小顶堆
+    public static int N = 10;           //获取最大的多少条 10
+    public static int LEN = 100000000; //多少个整数
+    public static int[] arr = new int[LEN];
+    public static int[] result = new int[N]; //在内存维护一个长度为N的小顶堆
     public static int len = result.length;
     //堆中元素的有效元素 heapSize<=len
     public static int heapSize = len;
@@ -45,7 +45,8 @@ public class SmallTopPile {
      * 自底向上构建小堆
      */
     public static void buildMinHeap() {
-        int size = len / 2 - 1; //最后一个非叶子节点
+        //最后一个非叶子节点
+        int size = len / 2 - 1;
         for (int i = size; i >= 0; i--) {
             minHeap(i);
         }
