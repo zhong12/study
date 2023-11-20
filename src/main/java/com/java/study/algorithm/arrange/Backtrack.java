@@ -26,10 +26,10 @@ public class Backtrack implements ArrangeStr {
 
     /**
      *
-     * @param result
-     * @param sb
-     * @param chars
-     * @param used
+     * @param result 结果集
+     * @param sb 结果组合
+     * @param chars  每个结果的字符集
+     * @param used 每个结果的字符是否使用 true 是；false 否
      */
     private void handle(List<String> result, StringBuilder sb, char[] chars, boolean[] used) {
         if (sb.length() == chars.length) {
