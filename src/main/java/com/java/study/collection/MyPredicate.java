@@ -1,7 +1,7 @@
 package com.java.study.collection;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 import java.math.BigDecimal;
 

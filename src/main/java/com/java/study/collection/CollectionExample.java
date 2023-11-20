@@ -1,8 +1,10 @@
 package com.java.study.collection;
 
 import com.java.study.domain.User;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
+//import org.apache.commons.collections.CollectionUtils;
+//import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.*;
